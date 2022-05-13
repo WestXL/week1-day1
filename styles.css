@@ -79,6 +79,11 @@ input {
 input[type="radio"] {
     width: 25px;
 }
+input[type="submit"] {
+    display: block;
+    margin: 20px 0 10px 0;
+    width: 100px;
+}
 textarea {
     width: 300px;
 }
