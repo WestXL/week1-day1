@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My First Web Page</title>
+        <title>My Fourth Web Page</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
@@ -26,12 +26,12 @@
                 <p>My Fourth paragraph.</p>
 
                 <ul id="album">
-                    <li id="photo"><img src="images/winterland1.jpg"></li>
+                    <!-- <li id="photo"><img src="images/winterland1.jpg"></li>
                     <li id="photo"><img src="images/winterland2.jpg"></li>
                     <li id="photo"><img src="images/winterland3.jpg"></li>
                     <li id="photo"><img src="images/winterland4.jpg"></li>
                     <li id="photo"><img src="images/winterland5.jpg"></li>
-                    <li id="photo"><img src="images/winterland6.jpg"></li>
+                    <li id="photo"><img src="images/winterland6.jpg"></li> -->
                 </ul>
                 <!-- <img src="images/central_park.jpg" alt="Central Park" width="500"> -->
             </main> <!-- End Main Content -->
@@ -41,5 +41,30 @@
                 &copy; Copyright 2022
             </footer>
         </div> <!-- End Container-->
+
+        <script>
+            // array to store photos
+            var photos = []; 
+            // element to store the image names
+            var fileNames = [];
+            // store html list that contains an image
+            var imageList = [];
+            // store the assembled image list codes
+            var image;
+            // open list tag
+            var openList = "<li id='photo'>";
+            // close list tag
+            var closeList = "</li>";
+
+            // create a loop to create 6 imgs starting with index of 0
+            for (var i = 0; i < 6; i++) {
+                // <li id="photo"><img src="images/winterland2.jpg"></li>
+                fileNames.push("winterland" + (i + 1));
+                photos.push("<img src='images/"+fileNames[i]+".jpg'>");
+                image = openList + photos[i] + closeList;
+                imageList.push(image);
+            }
+            document.getElementById("album").innerHTML = imageList;
+        </script>
     </body>
 </html>
